@@ -8,13 +8,12 @@ import (
 )
 
 func main() {
-
 	host, err := os.Hostname()
 	if err != nil {
 		log.Fatal("failed to get hostname:", err)
 	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello, Nikita from %s!", host)
 	})
 
